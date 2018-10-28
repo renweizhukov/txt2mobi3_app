@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='txt2mobi3_app',
-    version='0.1.3',
+    version='0.1.4',
     description='A PyQt5 application for converting Chinese novel txt files into Kindle mobi files.',
     long_description=long_description,
     url='https://github.com/renweizhukov/txt2mobi3_app',
@@ -33,8 +33,7 @@ setup(
         'Programming Language :: Python :: 3',
         ],
     keywords='txt mobi python3 pyqt5',
-    package_dir={'': 'src'},
-    packages=find_namespace_packages(where='src'),
+    packages=find_namespace_packages(),
     include_package_data=True,
     install_requires=[
         'fbs',
@@ -45,7 +44,7 @@ setup(
     python_requires='>=3',
     entry_points={
         'gui_scripts': [
-            'txt2mobi3_app=main.python.main:txt2mobi3_app'
+            'txt2mobi3_app=src.main.python.main:txt2mobi3_app'
         ],
         },
     project_urls={
