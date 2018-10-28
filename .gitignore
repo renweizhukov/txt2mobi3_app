@@ -70,7 +70,9 @@ instance/
 docs/_build/
 
 # PyBuilder
-target/
+target/*
+# Linux installer
+!target/txt2mobi3_app.deb
 
 # Jupyter Notebook
 .ipynb_checkpoints
