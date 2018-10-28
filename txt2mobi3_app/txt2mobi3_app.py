@@ -170,7 +170,7 @@ class Txt2Mobi3Ui(QDialog):
 
         if not self._author_edit_box.text():
             Utility.show_msg_dialog(self, '警告', '作者为空', '作者将被重置为佚名')
-            self._author_edit_box.setText('无题')
+            self._author_edit_box.setText('佚名')
             self._author_edit_box.update()
         book_params['author'] = self._author_edit_box.text()
 
@@ -321,9 +321,13 @@ class Txt2Mobi3ConfigUi(QDialog):
         self._txt2mobi3.set_config(config)
 
 
-if __name__ == '__main__':
+def txt2mobi3_app():
     app = QApplication(sys.argv)
     app.setStyle('Fusion')
     main_ui = Txt2Mobi3Ui()
     main_ui.show()
     app.exec()
+
+
+if __name__ == '__main__':
+    txt2mobi3_app()
