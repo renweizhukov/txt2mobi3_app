@@ -1,0 +1,13 @@
+language: python
+python:
+- '3.5'
+script:
+- echo 'TODO'
+deploy:
+  provider: pypi
+  user: renwei2
+  password:
+    secure: aL7Vj16cRDR9ycNo4wwzfOUQv4vigt68gXYQJq7iMTJPbsVHItAMYoT/Natl+3ez0vQkXaVDOqhsb98YUovyC31bLcIg/+oW9hAh75QUPQge3s0za34QM2tkvO06RBSFu8vgJ4HOAPRTxB21YFEG/xt7hs6kRrkymLx0kuYRfYfyKaz78RXLayw1gGVNbtCz1T94t9p5/k95ywkCA6l51F317ViGwRxczosiAUdW1fkiknDz2L0haz6YRnol6d3AG99YqpZ4JNjVpSobiv1eRiUYxn/EW+uScBG9IB4EN26U77/VfRpw/3S0737LxAgqEdAC/esIRD9denPdsyTRm9IlwAEunrBvRhVROWFv7zY2ywSx3C4B79YQgNZidj4RGeBkxU1urDlUePnUFSaB37ydzgtcamcF23SFno705W94rLniAF1nb9gsKQxMzH+4inW1BXmldT4E/VHexVWb9Uf3CudMWT0unbsfz2/ChbCPAh/l5UXn/jJ1UVUPDbIWppknwVQuuesTAQzzt3ckch1xNk51PcwKgI6XPk0zf+7I/9NNgrJcB0aPln0SORStPXaXc3NN7kmhszxUgPlehoD69NgV25jAJL/aqOJshdg2b3wDGZ+FaLiQPl+ToDoa0wF+sCplGVgFMKmfJSESdpaCFZ/yxKXei24VxJ/HGRY=
+  on:
+    tags: true
+  distributions: sdist bdist_wheel
