@@ -6,7 +6,7 @@ See:
 https://github.com/renweizhukov/txt2mobi3_app
 """
 
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 from codecs import open
 from os import path
 
@@ -19,7 +19,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name='txt2mobi3_app',
-    version='0.1.0',
+    version='0.1.1',
     description='A PyQt5 application for converting Chinese novel txt files into Kindle mobi files.',
     long_description=long_description,
     url='https://github.com/renweizhukov/txt2mobi3_app',
@@ -33,17 +33,19 @@ setup(
         'Programming Language :: Python :: 3',
         ],
     keywords='txt mobi python3 pyqt5',
-    packages=find_packages(),
+    package_dir={'': 'src'},
+    packages=find_namespace_packages(where='src'),
     include_package_data=True,
     install_requires=[
+        'fbs',
         'PyQt5',
-        'txt2mobi3',
         'setuptools',
+        'txt2mobi3',
         ],
     python_requires='>=3',
     entry_points={
-        'console_scripts': [
-            'txt2mobi3_app=txt2mobi3_app.txt2mobi3_app:txt2mobi3_app'
+        'gui_scripts': [
+            'txt2mobi3_app=main.python.main:txt2mobi3_app'
         ],
         },
     project_urls={

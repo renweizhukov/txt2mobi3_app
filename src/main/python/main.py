@@ -4,6 +4,8 @@
 
 import os
 import sys
+
+from fbs_runtime.application_context import ApplicationContext
 from PyQt5.QtWidgets import (QApplication, QCheckBox, QDialog, QFileDialog, 
     QGridLayout, QHBoxLayout, QLabel, QLineEdit, QMessageBox, QPushButton)
 from PyQt5.QtCore import pyqtSlot, QDir
@@ -321,12 +323,18 @@ class Txt2Mobi3ConfigUi(QDialog):
         self._txt2mobi3.set_config(config)
 
 
+class AppContext(ApplicationContext):           # 1. Subclass ApplicationContext
+    def run(self):                              # 2. Implement run()
+        self.app.setStyle('Fusion')
+        main_ui = Txt2Mobi3Ui()
+        main_ui.show()
+        return self.app.exec()                  # 3. End run() with this line
+
+
 def txt2mobi3_app():
-    app = QApplication(sys.argv)
-    app.setStyle('Fusion')
-    main_ui = Txt2Mobi3Ui()
-    main_ui.show()
-    app.exec()
+    appctxt = AppContext()                      # 4. Instantiate the subclass
+    exit_code = appctxt.run()                   # 5. Invoke run()
+    sys.exit(exit_code)
 
 
 if __name__ == '__main__':
