@@ -78,7 +78,24 @@ TODO
 2.3. Windows
 ~~~~~~~~~~~~
 
-TODO
+(1) 如果是Windows 10，你可能需要安装\ `Windows 10
+    SDK <https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk>`__\ 。
+
+(2) 安装\ `NSIS <http://nsis.sourceforge.net/Main_Page>`__\ 并将其安装目录添加到\ ``PATH``\ 环境变量中。
+
+(3) 产生安装包
+
+.. code:: bash
+
+    $ python -m fbs installer
+
+生成的安装包\ ``txt2mobi3_appSetup.exe.ext``\ 会在\ ``target``\ 目录中。
+
+如果想产生一个可以单独运行的可执行文件，那么就运行下面这个fbs命令。
+
+.. code:: bash
+
+    $ python -m fbs freeze
 
 3. README.rst
 -------------

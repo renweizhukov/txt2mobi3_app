@@ -2,5 +2,5 @@
     "app_name": "txt2mobi3_app",
     "main_module": "src/main/python/main.py",
     "author": "Wei Ren",
-    "version": "0.1.6"
+    "version": "0.1.7"
 }
