@@ -74,6 +74,8 @@ docs/_build/
 target/*
 # Linux installer
 !target/txt2mobi3_app.deb
+# Windows installer
+!target/txt2mobi3_appSetup.exe
 
 # Jupyter Notebook
 .ipynb_checkpoints
