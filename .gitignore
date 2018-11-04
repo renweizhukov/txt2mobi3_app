@@ -74,6 +74,8 @@ docs/_build/
 target/*
 # Linux installer
 !target/txt2mobi3_app.deb
+# MacOS installer
+!target/txt2mobi3_app.dmg
 # Windows installer
 !target/txt2mobi3_appSetup.exe
 

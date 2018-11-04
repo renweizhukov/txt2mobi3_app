@@ -15,8 +15,8 @@ written in Chinese.
 
 .. code:: bash
 
-    $ pip install txt2mobi3_app
-    $ txt2mobi3_app
+   $ pip install txt2mobi3_app
+   $ txt2mobi3_app
 
 1.2. 从安装包：
 ~~~~~~~~~~~~~~~
@@ -25,17 +25,17 @@ written in Chinese.
 
 下面以Ubuntu 16.04LTS为例：
 
-.. code:: bash
+.. code:: bash
 
-    $ sudo dpkg -i target/txt2mobi3_app.deb
+   $ sudo dpkg -i target/txt2mobi3_app.deb
 
 (2) MacOS
 
-TODO
+将txt2mobi3_app.dmg移动到Application中。
 
 (3) Windows
 
-TODO
+点击运行txt2mobi3_appSetup.exe。
 
 2. 产生安装包
 -------------
@@ -51,14 +51,14 @@ TODO
 
 .. code:: bash
 
-    $ sudo apt install ruby ruby-dev rubygems build-essential
-    $ sudo gem install --no-ri --no-rdoc fpm
+   $ sudo apt install ruby ruby-dev rubygems build-essential
+   $ sudo gem install --no-ri --no-rdoc fpm
 
 (2) 产生安装包
 
 .. code:: bash
 
-    $ python -m fbs installer
+   $ python -m fbs installer
 
 生成的安装包\ ``txt2mobi3_app.deb``\ 会在\ ``target``\ 目录中。
 
@@ -66,14 +66,35 @@ TODO
 
 .. code:: bash
 
-    $ python -m fbs freeze
+   $ python -m fbs freeze
 
 生成的可执行文件位于\ ``target/txt2mobi3_app``\ 目录中。将\ ``target/txt2mobi3_app``\ 目录复制到别的机器上后就可运行其中的可执行文件。
 
 2.2. MacOS
 ~~~~~~~~~~
 
-TODO
+以macOS Sierra 10.12.6为例：
+
+(1) 先产生一个可以单独执行的可执行文件。
+
+.. code:: bash
+
+   $ python -m fbs freeze
+
+(2) 手动将默认封面图片和KindleGen程序等资源复制到包含有可执行文件的子目录txt2mobi3下。
+
+.. code:: bash
+
+   $ cp -a src/main/resources/base/txt2mobi3/resources target/txt2mobi3_app/txt2mobi3/ 
+   $ cp -a src/main/resources/mac/txt2mobi3/resources/kindlegen/ target/txt2mobi3_app/txt2mobi3/resources/
+
+因为fbs的一个可能bug（具体参见https://github.com/mherrmann/fbs/issues/39），所以这里我们不得不需要手动复制这些文件。
+
+(3) 产生安装包。
+
+.. code:: bash
+
+   $ python -m fbs installer
 
 2.3. Windows
 ~~~~~~~~~~~~
@@ -87,7 +108,7 @@ TODO
 
 .. code:: bash
 
-    $ python -m fbs installer
+   $ python -m fbs installer
 
 生成的安装包\ ``txt2mobi3_appSetup.exe.ext``\ 会在\ ``target``\ 目录中。
 
@@ -95,7 +116,7 @@ TODO
 
 .. code:: bash
 
-    $ python -m fbs freeze
+   $ python -m fbs freeze
 
 3. README.rst
 -------------
@@ -104,4 +125,4 @@ README.rst is generated from README.md via ``pandoc``.
 
 .. code:: bash
 
-    $ pandoc --from=markdown --to=rst --output=README.rst README.md
+   $ pandoc --from=markdown --to=rst --output=README.rst README.md
