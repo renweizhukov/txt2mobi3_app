@@ -31,7 +31,13 @@ $ sudo dpkg -i target/txt2mobi3_app.deb
 
 ## 2. 产生安装包
 
-这里我们使用[fbs](https://github.com/mherrmann/fbs-tutorial)来产生Linux、MacOS和Windows上的安装包。
+这里我们使用[fbs](https://github.com/mherrmann/fbs-tutorial)来产生Linux、MacOS和Windows上的安装包。注意我们依赖的三个关键python包的版本如下：
+
+```
+fbs==0.3.6
+PyQt5==5.11.3
+PyInstaller==3.4
+```
 
 ### 2.1. Linux
 
@@ -70,16 +76,7 @@ $ python -m fbs freeze
 $ python -m fbs freeze
 ```
 
-(2) 手动将默认封面图片和KindleGen程序等资源复制到包含有可执行文件的子目录txt2mobi3下。
-
-```bash
-$ cp -a src/main/resources/base/txt2mobi3/resources target/txt2mobi3_app/txt2mobi3/ 
-$ cp -a src/main/resources/mac/txt2mobi3/resources/kindlegen/ target/txt2mobi3_app/txt2mobi3/resources/
-```
-
-因为fbs的一个可能bug（具体参见https://github.com/mherrmann/fbs/issues/39），所以这里我们不得不需要手动复制这些文件。
-
-(3) 产生安装包。
+(2) 产生安装包。
 
 ```bash
 $ python -m fbs installer
