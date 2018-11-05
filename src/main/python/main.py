@@ -119,6 +119,8 @@ class Txt2Mobi3Ui(QDialog):
         txt_path = Utility.open_file_name_dialog(
             self, 'txt文件路径', os.path.expanduser('~'), 'TXT Files (*.txt)')
         self._txt_edit_box.setText(txt_path)
+        if not self._mobi_edit_box.text():
+            self._mobi_edit_box.setText(os.path.dirname(txt_path))
 
 
     @pyqtSlot()
