@@ -12,4 +12,4 @@ fbs == 0.3.6
 setuptools == 40.4.3
 
 # src/main/python/main.py: 13
-txt2mobi3 == 0.2.11
+txt2mobi3 == 0.2.12
