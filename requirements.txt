@@ -3,13 +3,13 @@
 # BUGBUG: change the version comparison operator from '==' into '>=' by hand.
 
 # src/main/python/main.py: 11,12
-PyQt5 >= 5.11.3
+PyQt5 == 5.11.3
 
 # src/main/python/main.py: 8
-fbs >= 0.2.9
+fbs == 0.3.6
 
 # setup.py: 9
-setuptools >= 40.4.3
+setuptools == 40.4.3
 
 # src/main/python/main.py: 13
-txt2mobi3 >= 0.2.5
+txt2mobi3 == 0.2.11
