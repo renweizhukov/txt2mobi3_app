@@ -9,7 +9,7 @@ PyQt5 == 5.11.3
 fbs == 0.3.6
 
 # setup.py: 9
-setuptools == 40.4.3
+setuptools == 65.5.1
 
 # src/main/python/main.py: 13
 txt2mobi3 == 0.2.12
